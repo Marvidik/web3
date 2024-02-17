@@ -44,6 +44,8 @@ w3.eth.default_account = my_address
 # Create a contract instance
 MarviesBet = w3.eth.contract(abi=abi, bytecode=bytecode)
 
+
+# Getting the nonce 
 nonce=w3.eth.get_transaction_count(my_address)
 
 
@@ -53,6 +55,7 @@ transaction = MarviesBet.constructor().build_transaction({"chainId":chain_id,"fr
 signed_txn=w3.eth.account.sign_transaction(transaction,private_key=private_key)
 tx_hash=w3.eth.send_raw_transaction(signed_txn.rawTransaction)
 
+#transaction receipt
 tx_receipt=w3.eth.wait_for_transaction_receipt(tx_hash)
 
 
