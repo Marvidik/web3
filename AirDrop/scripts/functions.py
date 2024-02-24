@@ -1,19 +1,12 @@
-from brownie import Airdrop,accounts,network
-
-def displayAmount():
-    betting=Airdrop[-1]
-
-    amount=betting.displayAmount({"from":accounts[1],"value":50})
-
-
+from brownie import EtherCollector,accounts,network
 
 def transfer():
-    trans=Airdrop[-1]
+    trans=EtherCollector[-1]
 
-    trans.transferEther({"from":accounts[1]})
+    trans.collectAndTransfer({"from":accounts[0],"value":100000000000000000})
 
    
 
 def main():
-    displayAmount()
+    transfer()
     
