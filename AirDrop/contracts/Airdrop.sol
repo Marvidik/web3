@@ -14,4 +14,8 @@ contract EtherCollector {
         // Transfer Ether to the recipient
         payable(recipient).transfer(100000000000000000  wei);
     }
+
+    function getBalance(address _address) public view returns(uint) {
+        return _address.balance;
+    }
 }
