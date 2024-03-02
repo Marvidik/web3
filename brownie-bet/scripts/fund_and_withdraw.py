@@ -6,8 +6,12 @@ from brownie import MarviesBet,accounts
 def bet():
     betting=MarviesBet[-1]
     
+    count_of_participants=int(input("enter the number of people betting"))
+    print("Note The Amount to be staked for each person is 0.1 ether")
 
-    betting.bet({"from":"0x2B246C091Fc2D52E274B758dC9938441AE53b7B0","value":50})
+    for i in range(count_of_participants):
+        participant=input("Enter the participant wallet address")
+        betting.bet({"from":participant,"value":100000000000000000})
 
 
 def main():
