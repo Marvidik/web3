@@ -9,10 +9,10 @@ def transfer():
 def check_balance():
     trans=EtherCollector[-1]
 
-    trans.getBalance({"from":accounts[0]})
-
+    balance=trans.getBalance(accounts[0],{"from":accounts[0]})
+    print("Balance:", balance)
 
 
 def main():
-    check_balance()
+    transfer()
     

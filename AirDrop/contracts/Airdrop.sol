@@ -9,6 +9,9 @@ contract EtherCollector {
     }
 
     function collectAndTransfer() public payable {
+
+
+
         require(msg.value >= 100000000000000000   wei, "Please send exactly 0.001 ether");
 
         // Transfer Ether to the recipient
